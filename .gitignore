@@ -1,0 +1,8 @@
+*.pyc
+*.deb
+*.egg-info
+*.rpm
+*.tar.gz
+deb_dist
+dist
+build

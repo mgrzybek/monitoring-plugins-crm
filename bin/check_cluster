@@ -1,0 +1,8 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import monitoring_plugins_crm.crm_check
+
+if __name__ == "__main__":
+	check = monitoring_plugins_crm.crm_check.CrmCheck()
+	check.check().exit()
