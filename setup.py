@@ -20,7 +20,7 @@ setup(
 	packages = ['monitoring_plugins_crm'],
 	data_files = [('/usr/lib/nagios/plugins',['bin/check_cluster'])],
 	install_requires = ['pynagios'],
-	long_description = read('README'),
+	long_description = read('README.rst'),
 	classifiers = [
 		"Development Status :: 5 - Production/Stable",
 		"Topic :: Utilities",
