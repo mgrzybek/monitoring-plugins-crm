@@ -9,7 +9,7 @@ This script checks the state of resources and nodes. An alert is emitted if
 some nodes are offline or if some resources are in the 'failed' state.
 
 ## Usage
-This plugin requires a sudo configuration, such as:
+This plugin can be run using an unprivileged user but requires a sudo configuration, such as:
 
 ```
 User_Alias NAGIOS = nagios
