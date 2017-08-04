@@ -10,11 +10,11 @@ some nodes are offline or if some resources are in the 'failed' state.
 
 ## Usage
 
-Checks the state of nodes: `sudo /usr/lib/nagios/plugins/check_cluster --nodes=yes --resources=no --perfdata=yes`
+Checks the state of nodes: ```sudo /usr/lib/nagios/plugins/check_cluster --nodes=yes --resources=no --perfdata=yes```
 
-Checks the state of ressources: `sudo /usr/lib/nagios/plugins/check_cluster --nodes=no --resources=yes --perfdata=yes`
+Checks the state of ressources: ```sudo /usr/lib/nagios/plugins/check_cluster --nodes=no --resources=yes --perfdata=yes```
 
-Checks the state of both nodes and ressources: `sudo /usr/lib/nagios/plugins/check_cluster --nodes=yes --resources=yes --perfdata=yes`
+Checks the state of both nodes and ressources: ```sudo /usr/lib/nagios/plugins/check_cluster --nodes=yes --resources=yes --perfdata=yes```
 
 The 'warning' and 'critical' thresholds deal with the number of failed resources.
 
@@ -22,4 +22,4 @@ Perfdata provide two metrics: 'offline_nodes' and 'failed_resources'.
 
 ## Help
 
-`/usr/lib/nagios/plugins/check_cluster --help`
+```/usr/lib/nagios/plugins/check_cluster --help```
