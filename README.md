@@ -9,12 +9,19 @@ This script checks the state of resources and nodes. An alert is emitted if
 some nodes are offline or if some resources are in the 'failed' state.
 
 ## Usage
+This plugin requires a sudo configuration, such as:
 
-Checks the state of nodes: ```sudo /usr/lib/nagios/plugins/check_cluster --nodes=yes --resources=no --perfdata=yes```
+```
+User_Alias NAGIOS = nagios
+Cmd_Alias NAGIOS_CMD = /usr/sbin/crm_mon --as-xml
+NAGIOS ALL = (root) NOPASSWD: NOEXEC: NAGIOS_CMD
+```
 
-Checks the state of ressources: ```sudo /usr/lib/nagios/plugins/check_cluster --nodes=no --resources=yes --perfdata=yes```
+Checks the state of nodes: ```/usr/lib/nagios/plugins/check_cluster --nodes=yes --resources=no --perfdata=yes```
 
-Checks the state of both nodes and ressources: ```sudo /usr/lib/nagios/plugins/check_cluster --nodes=yes --resources=yes --perfdata=yes```
+Checks the state of ressources: ```/usr/lib/nagios/plugins/check_cluster --nodes=no --resources=yes --perfdata=yes```
+
+Checks the state of both nodes and ressources: ```/usr/lib/nagios/plugins/check_cluster --nodes=yes --resources=yes --perfdata=yes```
 
 The 'warning' and 'critical' thresholds deal with the number of failed resources.
 

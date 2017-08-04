@@ -21,9 +21,13 @@ class CrmCheck(Plugin):
 	resources = make_option("--resources", dest="resources", help="Check resources status", type="choice", choices=[ "yes", "no"], default="yes")
 
 	## Performs a check,
-	# Uses crmsh classes to get the status
+	# Uses crmsh XML output and sudo if not run as root
 	def doApiGet(self):
 		cib_command = [ '/usr/sbin/crm_mon', '--as-xml' ]
+
+		if os.getuid() != 0:
+			cib_command.insert(0, 'sudo')
+
 		rs = subprocess.check_output(cib_command)
 		xml_cib = xml.etree.ElementTree.fromstring(rs)
 
@@ -53,9 +57,6 @@ class CrmCheck(Plugin):
 	# @return a Response object
 	def check(self):
 		try:
-			if os.getuid() != 0:
-				return Response(UNKNOWN, "Must be run as root")
-
 			if self.options.nodes == 'no' and self.options.resources == 'no':
 				return Response(UNKNOWN, "Nothing to monitor: nodes=no and resources=no")
 
