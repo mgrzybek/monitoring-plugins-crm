@@ -16,7 +16,8 @@ setup(
 	description = "This script checks the state of resources and nodes.",
 	license = "GPLv3",
 	keywords = "monitoring check crm cluster",
-	url = "https://git.gendarmerie.fr/stig",
+	url = "https://github.com/mgrzybek/monitoring-plugins-crm",
+	download_url = "https://github.com/mgrzybek/monitoring-plugins-crm/archive/1.0.1.tar.gz",
 	packages = ['monitoring_plugins_crm'],
 	data_files = [('/usr/lib/nagios/plugins',['bin/check_cluster'])],
 	install_requires = ['pynagios'],
@@ -25,6 +26,6 @@ setup(
 		"Development Status :: 5 - Production/Stable",
 		"Topic :: Utilities",
 		"Environment :: Console",
-		"License :: OSI Approved :: GPLv3 License"
-	],
+		"License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)"
+	]
 )
